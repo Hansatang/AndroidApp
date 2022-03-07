@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/Home">
+    <fragment
+        android:id="@+id/Home"
+        android:name="com.example.and1.InternetFragment"
+        android:label="InternetFragment" />
+    <fragment
+        android:id="@+id/internetId"
+        android:name="com.example.and1.InternetFragment2"
+        android:label="InternetFragment2" />
+
+    <fragment
+        android:id="@+id/Calcu"
+        android:name="com.example.and1.Calcu"
+        android:label="Calcu" />
+
+    <fragment
+        android:id="@+id/Log"
+        android:name="com.example.and1.Login"
+        android:label="Log" />
+
+    <fragment
+        android:id="@+id/Pengu"
+        android:name="com.example.and1.Penguins"
+        android:label="Pengu" />
+</navigation>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Home"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/home" />
+        <item
+            android:id="@+id/Calcu"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/Calcu"/>
+        <item
+            android:id="@+id/Log"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/log" />
+        <item
+            android:id="@+id/Pengu"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="@string/pengu" />
+
+        <item
+            android:id="@+id/internetId"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Internet" />
+    </group>
+</menu>

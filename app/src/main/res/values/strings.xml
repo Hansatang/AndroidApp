@@ -1,0 +1,43 @@
+<resources>
+    <string name="app_name">AND1</string>
+    <string name="Title">YAY</string>
+    <string name="pageableDescription">Pageable</string>
+    <string name="clickableTitle">Clickable</string>
+    <string name="PenguinText">Penguins are a group of aquatic flightless birds. They live almost exclusively in the southern hemisphere: only one species, the Galápagos penguin, is found north of the Equator. Highly adapted for life in the water, penguins have countershaded dark and white plumage and flippers for swimming. Most penguins feed on krill, fish, squid and other forms of sea life which they catch while swimming underwater. They spend roughly half of their lives on land and the other half in the sea. Although almost all penguin species are native to the southern hemisphere, they are not found only in areas with cold climates, such as Antarctica. In fact, only a few species of penguin live that far south. Several species are found in the temperate zone, and one species, the Galápagos penguin, lives near the Equator.</string>
+    <string name="camera">Camera</string>
+    <string name="inputText"></string>
+    <string name="discard">Discard</string>
+    <string name="hint">hint</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="login">Login</string>
+    <string name="username">UserName</string>
+    <string name="password">Password</string>
+    <string name="ButtonTits">Tits</string>
+    <string name="_1">1</string>
+    <string name="_2">2</string>
+    <string name="_3">3</string>
+    <string name="_4">4</string>
+    <string name="_5">5</string>
+    <string name="_6">6</string>
+    <string name="_7">7</string>
+    <string name="_8">8</string>
+    <string name="_0">0</string>
+    <string name="PlusSign">+</string>
+    <string name="calculator">Calculator</string>
+    <string name="penguins">Penguins</string>
+    <string name="internet">Internet</string>
+    <string name="content_description_favorite">Nav</string>
+    <string name="content_description_search">Search</string>
+    <string name="content_description_more">More</string>
+    <string name="nav_header_desc">Nav_Header</string>
+    <string name="nav_header_title">NavBar</string>
+    <string name="nav_header_subtitle">NavSub</string>
+    <string name="Penguin">Penguin</string>
+    <string name="Calcu">Calcu</string>
+    <string name="log">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="pengu">Pengu</string>
+</resources>

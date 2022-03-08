@@ -6,11 +6,11 @@
     app:startDestination="@id/Home">
     <fragment
         android:id="@+id/Home"
-        android:name="com.example.and1.InternetFragment"
-        android:label="InternetFragment" />
+        android:name="com.example.and1.Home"
+        android:label="Home" />
     <fragment
         android:id="@+id/internetId"
-        android:name="com.example.and1.InternetFragment2"
+        android:name="com.example.and1.WebBrowser"
         android:label="InternetFragment2" />
 
     <fragment

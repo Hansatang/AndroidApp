@@ -17,54 +17,57 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
-public class Penguins extends Fragment {
+public class Penguins extends Fragment implements View.OnClickListener {
     private static final String Tag = "MainActivity";
     EditText mEdit;
     ProgressBar pBar;
     ImageView iView;
     Switch iSwitch;
+    View fragView;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         System.out.println("Penguins");
-        View view = inflater.inflate(R.layout.activity_fourth, container, false);
+        fragView = inflater.inflate(R.layout.activity_fourth, container, false);
 
-        mEdit = view.findViewById(R.id.editTextTextPersonName);
-        pBar = view.findViewById(R.id.progressBar);
+        mEdit = fragView.findViewById(R.id.editTextTextPersonName);
+        pBar = fragView.findViewById(R.id.progressBar);
 
-
-        iView = view.findViewById(R.id.imageView);
-        iSwitch = view.findViewById(R.id.switch1);
+        iView = fragView.findViewById(R.id.imageView);
+        iSwitch = fragView.findViewById(R.id.switch1);
         Log.i(Tag, "onCreate was called");
 
         iSwitch.setOnCheckedChangeListener((compoundButton, b) -> {
-            if (b) {
-                iView.setImageResource(R.drawable.ic_launcher_foreground);
-            } else {
-                iView.setImageResource(R.drawable.ic_launcher_background);
-            }
+            iView.setImageResource(b ? R.drawable.ic_launcher_foreground : R.drawable.ic_launcher_background);
         });
 
-        return view;
+        Button ToastedButton = fragView.findViewById(R.id.button);
+        Button plusButton = fragView.findViewById(R.id.button4);
+        Button minusButton = fragView.findViewById(R.id.button3);
+        ToastedButton.setOnClickListener(this);
+        plusButton.setOnClickListener(this);
+        minusButton.setOnClickListener(this);
+
+        return fragView;
     }
 
-
-//    public void buttonClicked(View view) {
-//        TextView tv = findViewById(R.id.textView);
-//        Log.i(Tag, String.valueOf(tv.getText()));
-//        tv.setText(mEdit.getText().toString());
-//        Toast.makeText(this, "Penguins bro", Toast.LENGTH_SHORT).show();
-//    }
 
     @RequiresApi(api = Build.VERSION_CODES.N)
-    public void buttonMinus(View view) {
-        pBar.setProgress(pBar.getProgress() - 1, true);
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.button:
+                TextView tv = fragView.findViewById(R.id.textView);
+                Log.i(Tag, String.valueOf(tv.getText()));
+                tv.setText(mEdit.getText().toString());
+                Toast.makeText(getActivity(), "Penguins bro", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.button3:
+                pBar.setProgress(pBar.getProgress() - 1, true);
+                break;
+            case R.id.button4:
+                pBar.setProgress(pBar.getProgress() + 1, true);
+                break;
+        }
+
     }
-
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    public void buttonPlus(View view) {
-        pBar.setProgress(pBar.getProgress() + 1, true);
-    }
-
-
-
 }

@@ -13,18 +13,15 @@ import java.util.ArrayList;
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     final private OnListItemClickListener mOnListItemClickListener;
     private ArrayList<ListObject> objects;
-    int i =0;
 
-    ListAdapter(ArrayList<ListObject> listObjects, OnListItemClickListener listener){
+    ListAdapter(ArrayList<ListObject> listObjects, OnListItemClickListener listener) {
         objects = listObjects;
         mOnListItemClickListener = listener;
     }
 
-
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View view;
-        System.out.println(viewType);
         if (viewType == 1) {
             view = inflater.inflate(R.layout.list_layout_b, parent, false);
         } else {
@@ -36,26 +33,22 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     public void onBindViewHolder(ViewHolder viewHolder, int position) {
         viewHolder.name.setText(objects.get(position).getName());
         viewHolder.icon.setImageResource(objects.get(position).getIconId());
-
     }
 
     @Override
     public int getItemViewType(int position) {
         final ListObject dataObj = objects.get(position);
-        System.out.println("position"+position);
-        System.out.println("position 2 "+position/2);
-        if ((position+1)%2 == 0) {
+        System.out.println("position" + position);
+        System.out.println("position 2 " + position / 2);
+        if ((position + 1) % 2 == 0) {
             return 0;
-        }
-        else {
+        } else {
             return 1;
         }
-
-
     }
 
     public interface OnListItemClickListener {
-        void onListItemClick(View clickedItemIndex);
+        void onListItemClick(ListObject clickedItemIndex);
     }
 
 
@@ -66,6 +59,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView name;
         ImageView icon;
+
         ViewHolder(View itemView) {
             super(itemView);
             name = itemView.findViewById(R.id.tv_name);
@@ -75,7 +69,8 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
         @Override
         public void onClick(View view) {
-            mOnListItemClickListener.onListItemClick(view.findViewById(R.id.tv_name));
+
+            mOnListItemClickListener.onListItemClick(objects.get(getBindingAdapterPosition()));
         }
     }
 }

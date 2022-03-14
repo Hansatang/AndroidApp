@@ -30,5 +30,10 @@
             android:id="@+id/Choose"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Choose" />
+
+        <item
+            android:id="@+id/Choose2"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Choose2" />
     </group>
 </menu>

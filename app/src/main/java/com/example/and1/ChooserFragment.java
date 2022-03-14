@@ -25,7 +25,7 @@ public class ChooserFragment extends Fragment implements SpinAdapter.OnListItemC
         list.add(new SpinnerObject("B"));
         list.add(new SpinnerObject("C"));
 
-        mSpinAdapter = new SpinAdapter(getContext(), R.layout.spinner_layout, list, this);
+        mSpinAdapter = new SpinAdapter(getContext(), R.layout.choose_layout, list, this);
         spinnerList.setAdapter(mSpinAdapter);
 
         return view;

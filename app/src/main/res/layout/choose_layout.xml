@@ -7,7 +7,11 @@
     <Spinner
         android:id="@+id/sp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:contentDescription="@string/clickableTitle" />
+        android:layout_height="50dp"
+        android:contentDescription="@string/clickableTitle"
+        android:dropDownVerticalOffset="0dp"
+        android:overlapAnchor="false"
+
+        android:spinnerMode="dropdown" />
 
 </LinearLayout>

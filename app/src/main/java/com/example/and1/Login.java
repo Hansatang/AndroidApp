@@ -63,9 +63,8 @@ public class Login extends Fragment implements ListAdapter.OnListItemClickListen
 
 
     @Override
-    public void onListItemClick(View clickedItemIndex) {
-        TextView resultView = (TextView) clickedItemIndex;
-        Toast.makeText(getContext(), "Letter Clicked: " + resultView.getText(), Toast.LENGTH_SHORT).show();
-
+    public void onListItemClick(ListObject clickedItemIndex) {
+//        TextView resultView = (TextView) clickedItemIndex;
+        Toast.makeText(getContext(), "Letter Clicked: " + clickedItemIndex.getName(), Toast.LENGTH_SHORT).show();
     }
 }

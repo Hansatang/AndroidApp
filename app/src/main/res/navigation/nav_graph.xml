@@ -32,4 +32,9 @@
         android:id="@+id/Choose"
         android:name="com.example.and1.ChooserFragment"
         android:label="Choose" />
+
+    <fragment
+        android:id="@+id/Choose2"
+        android:name="com.example.and1.ChooserFragment2"
+        android:label="Choose2" />
 </navigation>

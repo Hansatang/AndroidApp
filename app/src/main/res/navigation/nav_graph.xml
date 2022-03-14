@@ -27,4 +27,9 @@
         android:id="@+id/Pengu"
         android:name="com.example.and1.Penguins"
         android:label="Pengu" />
+
+    <fragment
+        android:id="@+id/Choose"
+        android:name="com.example.and1.ChooserFragment"
+        android:label="Choose" />
 </navigation>

@@ -2,6 +2,8 @@ package com.example.and1;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -17,6 +19,9 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 public class Penguins extends Fragment implements View.OnClickListener {
     private static final String Tag = "MainActivity";
     EditText mEdit;
@@ -25,6 +30,7 @@ public class Penguins extends Fragment implements View.OnClickListener {
     Switch iSwitch;
     View fragView;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         System.out.println("Penguins");
         fragView = inflater.inflate(R.layout.activity_fourth, container, false);
@@ -46,6 +52,40 @@ public class Penguins extends Fragment implements View.OnClickListener {
         ToastedButton.setOnClickListener(this);
         plusButton.setOnClickListener(this);
         minusButton.setOnClickListener(this);
+
+        ExecutorService executor = Executors.newSingleThreadExecutor();
+        Handler handler = new Handler(Looper.getMainLooper());
+        executor.execute(() -> {
+            while (pBar.getProgress() !=100)
+             {
+                try {
+                    Thread.sleep(100);
+                } catch( InterruptedException e ) {}
+                pBar.setProgress(pBar.getProgress() + 1, true);
+            }
+
+            /*
+             * Your task will be executed here
+             * you can execute anything here that
+             * you cannot execute in UI thread
+             * for example a network operation
+             * This is a background thread and you cannot
+             * access view elements here
+             *
+             * its like doInBackground()
+             * */
+            handler.post(() -> {
+
+
+                pBar.setVisibility(View.GONE);
+                /*
+                 * You can perform any operation that
+                 * requires UI Thread here.
+                 *
+                 * its like onPostExecute()
+                 * */
+            });
+        });
 
         return fragView;
     }

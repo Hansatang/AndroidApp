@@ -25,5 +25,10 @@
             android:id="@+id/internetId"
             android:icon="@drawable/ic_launcher_foreground"
             android:title="Internet" />
+
+        <item
+            android:id="@+id/Choose"
+            android:icon="@drawable/ic_launcher_foreground"
+            android:title="Choose" />
     </group>
 </menu>
